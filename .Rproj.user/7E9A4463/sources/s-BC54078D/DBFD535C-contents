@@ -11,8 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### DATA 607: Assignment1 – Loading Data into a Data Frame - Mushroom Data
 
-###Load data into a data frame named MD.
+####See raw date under "https://github.com/igukusamuel/DATA-607-Assignment-1/blob/master/Mushroom%20Data.csv"
 
+###Load data into a data frame named MD directly from the original url.
 MD<- read.table("https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data", header = F, sep = ",")
 
 ###Review the column titles.
