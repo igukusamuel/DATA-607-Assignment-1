@@ -222,8 +222,8 @@ $(document).ready(function () {
 <h3>Confirm name change</h3>
 <p>names(MD)</p>
 </div>
-<div id="replace-abbreviations-used-in-column-named-classes" class="section level3">
-<h3>Replace abbreviations used in column named classes</h3>
+<div id="rename-the-elements-in-column-1" class="section level3">
+<h3>Rename the elements in column 1</h3>
 <p>levels(MD<span class="math inline">\(classes) [levels(MD\)</span>classes)==“p”] &lt;- “poisonous” levels(MD<span class="math inline">\(classes) [levels(MD\)</span>classes)==“e”] &lt;- “edible”</p>
 </div>
 

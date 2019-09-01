@@ -33,8 +33,9 @@ names(MD) <- c("classes", "cap-shape", "cap-surface", "cap-color", "bruises?", "
 ###Confirm name change
 names(MD)
 
-###Rename the elements in column 1
+###Replace abbreviations used in column named classes
 levels(MD$classes) [levels(MD$classes)=="p"] <- "poisonous"
 levels(MD$classes) [levels(MD$classes)=="e"] <- "edible"
+
 
 
