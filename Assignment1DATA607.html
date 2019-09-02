@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Samuel Kigamba" />
@@ -70,9 +71,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type="text/css">
 .main-container {
@@ -86,7 +85,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -103,8 +101,6 @@ summary {
 </style>
 
 
-
-<div class="container-fluid main-container">
 
 <!-- tabsets -->
 
@@ -162,20 +158,17 @@ summary {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -185,8 +178,8 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Assignment1</h1>
-<h4 class="author"><em>Samuel Kigamba</em></h4>
-<h4 class="date"><em>Sep 1, 2019</em></h4>
+<h4 class="author">Samuel Kigamba</h4>
+<h4 class="date">Sep 1, 2019</h4>
 
 </div>
 
@@ -199,35 +192,74 @@ $(document).ready(function () {
 </div>
 <div id="load-data-into-a-data-frame-named-md-directly-from-the-original-url." class="section level3">
 <h3>Load data into a data frame named MD directly from the original url.</h3>
-<p>MD&lt;- read.table(“<a href="https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data" class="uri">https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data</a>”, header = F, sep = “,”)</p>
+<pre class="r"><code>mushroom &lt;- read.table(&quot;https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data&quot;, header = F, sep = &quot;,&quot;)</code></pre>
 </div>
 <div id="review-the-column-titles." class="section level3">
 <h3>Review the column titles.</h3>
-<p>names(MD)</p>
+<pre class="r"><code>names(mushroom[c(1:5),c(1:5)])</code></pre>
+<pre><code>## [1] &quot;V1&quot; &quot;V2&quot; &quot;V3&quot; &quot;V4&quot; &quot;V5&quot;</code></pre>
 </div>
 <div id="review-the-data-frame-structure-as-well-as-a-summary-of-the-data-items." class="section level3">
 <h3>Review the data frame structure as well as a summary of the data items.</h3>
-<p>summary(MD)</p>
+<pre class="r"><code>summary(mushroom[c(1:5),c(1:5)])</code></pre>
+<pre><code>##  V1    V2    V3          V4    V5   
+##  e:3   b:1   f:0   w      :2   f:1  
+##  p:2   c:0   g:0   g      :1   t:4  
+##        f:0   s:4   n      :1        
+##        k:0   y:1   y      :1        
+##        s:0         b      :0        
+##        x:4         c      :0        
+##                    (Other):0</code></pre>
 </div>
 <div id="review-first-5-rows-of-the-data-frame" class="section level3">
 <h3>Review first 5 rows of the data frame</h3>
-<p>head(MD, 5)</p>
+<pre class="r"><code>head(mushroom[c(1:5),c(1:5)])</code></pre>
+<pre><code>##   V1 V2 V3 V4 V5
+## 1  p  x  s  n  t
+## 2  e  x  s  y  t
+## 3  e  b  s  w  t
+## 4  p  x  y  w  t
+## 5  e  x  s  g  f</code></pre>
 </div>
 <div id="review-last-5-rows-in-the-data-frame-to-confirm-that-the-data-has-loaded-correctly." class="section level3">
 <h3>Review last 5 rows in the data frame to confirm that the data has loaded correctly.</h3>
-<p>tail(MD, 5)</p>
+<pre class="r"><code>tail(mushroom, 5)</code></pre>
+<pre><code>##      V1 V2 V3 V4 V5 V6 V7 V8 V9 V10 V11 V12 V13 V14 V15 V16 V17 V18 V19
+## 8120  e  k  s  n  f  n  a  c  b   y   e   ?   s   s   o   o   p   o   o
+## 8121  e  x  s  n  f  n  a  c  b   y   e   ?   s   s   o   o   p   n   o
+## 8122  e  f  s  n  f  n  a  c  b   n   e   ?   s   s   o   o   p   o   o
+## 8123  p  k  y  n  f  y  f  c  n   b   t   ?   s   k   w   w   p   w   o
+## 8124  e  x  s  n  f  n  a  c  b   y   e   ?   s   s   o   o   p   o   o
+##      V20 V21 V22 V23
+## 8120   p   b   c   l
+## 8121   p   b   v   l
+## 8122   p   b   c   l
+## 8123   e   w   v   l
+## 8124   p   o   c   l</code></pre>
 </div>
 <div id="rename-the-columns-note-the-default-naming-of-columns-is-v1-v2..-v23" class="section level3">
 <h3>Rename the columns (note the default naming of columns is V1, V2,….., V23)</h3>
-<p>names(MD) &lt;- c(“classes”, “cap-shape”, “cap-surface”, “cap-color”, “bruises?”, “odor”, “gill-attachment”, “gill-spacing”, “gill-size”, “gill-color”, “stalk-shape”, “stalk-root”, “stalk-surface-above-ring”, “stalk-surface-below-ring”, “stalk-color-above-ring”, “stalk-color-below-ring”, “veil-type”, “veil-color”, “ring-number”, “ring-type”, “spore-print-color”, “population”, “habitat”)</p>
+<pre class="r"><code>names(mushroom) &lt;- c(&quot;classes&quot;, &quot;cap-shape&quot;, &quot;cap-surface&quot;, &quot;cap-color&quot;, &quot;bruises?&quot;, &quot;odor&quot;, &quot;gill-attachment&quot;, &quot;gill-spacing&quot;, &quot;gill-size&quot;, &quot;gill-color&quot;, &quot;stalk-shape&quot;, &quot;stalk-root&quot;, &quot;stalk-surface-above-ring&quot;, &quot;stalk-surface-below-ring&quot;, &quot;stalk-color-above-ring&quot;, &quot;stalk-color-below-ring&quot;, &quot;veil-type&quot;, &quot;veil-color&quot;, &quot;ring-number&quot;, &quot;ring-type&quot;, &quot;spore-print-color&quot;, &quot;population&quot;, &quot;habitat&quot;)</code></pre>
 </div>
 <div id="confirm-name-change" class="section level3">
 <h3>Confirm name change</h3>
-<p>names(MD)</p>
+<pre class="r"><code>names(mushroom[c(1:5),c(1:5)])</code></pre>
+<pre><code>## [1] &quot;classes&quot;     &quot;cap-shape&quot;   &quot;cap-surface&quot; &quot;cap-color&quot;   &quot;bruises?&quot;</code></pre>
 </div>
 <div id="replace-abbreviations-used-in-column-named-classes" class="section level3">
 <h3>Replace abbreviations used in column named classes</h3>
-<p>levels(MD<span class="math inline">\(classes) [levels(MD\)</span>classes)==“p”] &lt;- “poisonous” levels(MD<span class="math inline">\(classes) [levels(MD\)</span>classes)==“e”] &lt;- “edible”</p>
+<pre class="r"><code>levels(mushroom$classes) [levels(mushroom$classes)==&quot;p&quot;] &lt;- &quot;poisonous&quot;
+levels(mushroom$classes) [levels(mushroom$classes)==&quot;e&quot;] &lt;- &quot;edible&quot;</code></pre>
+</div>
+<div id="confirm-abbreviations-change-in-column-named-classes" class="section level3">
+<h3>Confirm abbreviations change in column named classes</h3>
+<pre class="r"><code>mushroom[c(1:5),c(1:5)]</code></pre>
+<pre><code>##     classes cap-shape cap-surface cap-color bruises?
+## 1 poisonous         x           s         n        t
+## 2    edible         x           s         y        t
+## 3    edible         b           s         w        t
+## 4 poisonous         x           y         w        t
+## 5    edible         x           s         g        f</code></pre>
 </div>
 
 
@@ -247,6 +279,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

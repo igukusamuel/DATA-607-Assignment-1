@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1567394197496.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "90A53C2C",
+    "lastKnownWriteTime" : 1567392246,
+    "last_content_update" : 1567392246,
+    "path" : "~/R/win-library/3.5/DATA606/labs/Lab1/intro_to_r.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "298,47",
+        "scrollLine" : "269"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

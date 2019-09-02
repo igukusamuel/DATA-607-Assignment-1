@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1567394455302.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CCCCF89",
+    "lastKnownWriteTime" : 1567399272,
+    "last_content_update" : 1567399272816,
+    "path" : "~/R/win-library/3.5/DATA606/labs/Lab1/PresentHW.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "49,43",
+        "scrollLine" : "36",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
